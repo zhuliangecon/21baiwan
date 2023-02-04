@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>21百万</title>
-  <style>
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    a {
-      margin: 10px;
-      text-decoration: none;
-      color: blue;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <a href="https://twitter.com">Twitter</a>
-    <a href="https://weibo.com">Weibo</a>
-    <a href="https://space.bilibili.com">Bilibili</a>
-    <div>nostr</div>
-  </div>
-</body>
+  <head>
+    <title>21 Million</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Social Media Accounts</h1>
+    <ul style="list-style: none;">
+      <li style="display: flex; align-items: center; margin-bottom: 1rem;">
+        <a href="https://twitter.com/<username>">Twitter</a>
+      </li>
+      <li style="display: flex; align-items: center; margin-bottom: 1rem;">
+        <a href="https://weibo.com/<username>">Weibo</a>
+      </li>
+      <li style="display: flex; align-items: center; margin-bottom: 1rem;">
+        <a href="https://space.bilibili.com/<username>">Bilibili</a>
+      </li>
+      <li style="text-align: center;">
+        <p>Nostr Public Key:</p>
+        <code>your-public-key-string</code>
+      </li>
+    </ul>
+  </body>
 </html>
