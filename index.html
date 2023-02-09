@@ -12,7 +12,7 @@
       }
       a {
         text-decoration: none;
-      }      
+      }
     </style>
   </head>
   <body>
@@ -22,5 +22,16 @@
     <p><a href="https://twitter.com/21baiwan">推特 Twitter</a></p>
     <p>Nostr Pub Key</p>
     <code style="font-size: 15px;">npub1v3sxc5qyscfkcnpm5g5wl5w4v2f2gquj5gu8d5sdkwlt8wz4jjnq5xmzpa</code>
+    <p style="margin-top: 1rem;"><a href="#" onclick="copyToClipboard('wss://relay.21baiwan.com')">Join My Relay wss://relay.21baiwan.com</a></p>
   </body>
+  <script>
+    function copyToClipboard(value) {
+      var textarea = document.createElement("textarea");
+      textarea.value = value;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
+  </script>
 </html>
