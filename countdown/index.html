@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitcoin Halving Countdown</title>
+    <script>
+        function countdown() {
+            var now = new Date();
+            var halving = new Date("May 14, 2024 00:00:00 GMT-07:00");
+            var timeLeft = halving - now;
+            var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds until the next Bitcoin halving.";
+        }
+        setInterval(countdown, 1000);
+    </script>
+</head>
+<body>
+    <h1>Bitcoin Halving Countdown</h1>
+    <p id="countdown"></p>
+</body>
+</html>
