@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bitcoin Halving Countdown</title>
+    <title>Countdown</title>
     <script>
         function countdown() {
             var now = new Date();
@@ -11,13 +11,34 @@
             var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds until the next Bitcoin halving.";
+            document.getElementById("countdown").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds ;
         }
         setInterval(countdown, 1000);
     </script>
+  <style>
+      body {
+          background-color: black;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; /* 垂直居中 */
+          align-items: center; /* 水平居中 */
+          height: 100vh; /* 让 body 元素铺满整个视口 */
+          margin: 0; /* 去掉默认的 body margin */
+      }
+  
+      #countdown {
+          font-size: 10rem; /* 设置字号特别大 */
+      }
+  
+      a {
+          text-decoration: none;
+          color: white;
+      }
+  </style>
 </head>
 <body>
-    <h1>Bitcoin Halving Countdown</h1>
-    <p id="countdown"></p>
+    <h1 id="countdown"></h1>
+    <p ></p>
 </body>
 </html>
