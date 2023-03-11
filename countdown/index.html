@@ -11,8 +11,18 @@
             var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds ;
+
+            // Add leading zeros to minutes and seconds if they are less than 10
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+
+            document.getElementById("countdown").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
         }
+
         setInterval(countdown, 1000);
     </script>
   <style>
