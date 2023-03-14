@@ -29,17 +29,25 @@
         setInterval(countdown, 1000);
     </script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $.getJSON('https://api.coinbase.com/v2/prices/BTC-USD/spot', function(data) {
-        var price = parseFloat(data.data.amount);
-        $('#price').html('$' + price.toFixed(0));
-        var sats_per_dollor = (100000000 / price).toFixed(0);
-        var MoscowTime = sats_per_dollor.slice(0,2) + ":" + sats_per_dollor.slice(2,4);
-        $('#MoscowTime').html(MoscowTime);
-      });
+<script>
+  function updateBitcoinPrice() {
+    $.getJSON('https://api.coinbase.com/v2/prices/BTC-USD/spot', function(data) {
+      var price = parseFloat(data.data.amount);
+      $('#price').html('$' + price.toFixed(0));
+      var sats_per_dollor = (100000000 / price).toFixed(0);
+      var MoscowTime = sats_per_dollor.slice(0,2) + ":" + sats_per_dollor.slice(2,4);
+      $('#MoscowTime').html(MoscowTime);
     });
-  </script>
+  }
+
+  $(document).ready(function() {
+    // Update Bitcoin price on page load
+    updateBitcoinPrice();
+
+    // Refresh Bitcoin price every minute
+    setInterval(updateBitcoinPrice, 60000);
+  });
+</script>
     <style>
       body {
         background-color: black;
@@ -60,8 +68,12 @@
     <a href="/countdown">
       <h1 id="countdown"></h1>
     </a>
-     <h2 id="price"></h2>
-     <h2 id="MoscowTime"></h2>
+    <a href="/price">
+      <h2 id="price"></h2>
+    </a>
+    <a href="/MoscowTime">
+      <h2 id="MoscowTime"></h2>
+    </a>
     <h2>@21baiwan</h2>
     <h3><a href="https://weibo.com/u/2239934365">微博 Weibo</a></h3>
     <h3><a href="https://space.bilibili.com/626994991?spm_id_from=333.1007.0.0">哔哩哔哩 Bilibili</a></h3>
