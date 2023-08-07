@@ -24,35 +24,40 @@
                 seconds = "0" + seconds;
             }
 
-            document.getElementById("countdown").innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
         }
 
         setInterval(countdown, 1000);
     </script>
-  <style>
-      body {
-          background-color: black;
-          color: white;
-          display: flex;
-          flex-direction: column;
-          justify-content: center; /* 垂直居中 */
-          align-items: center; /* 水平居中 */
-          height: 100vh; /* 让 body 元素铺满整个视口 */
-          margin: 0; /* 去掉默认的 body margin */
-      }
-  
-      #countdown {
-          font-size: 8rem; /* 设置字号特别大 */
-      }
-  
-      a {
-          text-decoration: none;
-          color: white;
-      }
-  </style>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            height: 100vh; /* Make the body element fill the entire viewport */
+            margin: 0; /* Remove the default body margin */
+        }
+
+        .time-unit {
+            font-size: 8rem; /* Set a very large font size */
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="countdown"></h1>
-    <p ></p>
+    <div id="days" class="time-unit"></div>
+    <div id="hours" class="time-unit"></div>
+    <div id="minutes" class="time-unit"></div>
+    <div id="seconds" class="time-unit"></div>
 </body>
 </html>
